@@ -3,11 +3,17 @@
 # O QUE APRENDI NESTE PROJETO?
 Esse projeto foi feito em conjunto ao curso de JavaScript, então além de eu aprender
 toda a teoria, eu ainda coloquei tudo em prática neste projeto.
+
 Neste curso aprendi muito sobre JS, começando pelo básico que são operadores, funções, variáveis e etc. Nesta parte foi tranquilo pra mim, pois já tenho uma vivência com outra linguagem de programação (Java), então foi só eu pegar o jeito com a sintaxe do JS.
+
 Depois disso aprendi sobre manipulação do DOM. Essa parte foi com certeza uma das mais legais, gostei muito de manipular o DOM, testei muitas coisas por conta própria, e foi incrível.
+
 Após isso, cheguei na parte de iteração, aprendi sobre métodos de array, objetos, funções e string. Essa parte foi meio difícil, mas foi só questão de tempo pra mim pegar o jeito.
+
 Aprendi sobre classes no JS, mas pessoalmente, eu gostei mais de usar Factory Function em vez de classes.
+
 Uma das últimas coisas que aprendi foi o JavaScript Assíncrono, que pega a parte de API, promisses, fecth, async, await. Nesta parte do curso também aprendi algumas coisas sobre HTTP e JSON.
+
 Depois aprendi algumas coisas novas do ES6+, como arrow function e spread.
 Nessa última semana estudando, aprendi sobre como usar linha de comando e npm para instalar webpack, babel, eslint e etc.
 
