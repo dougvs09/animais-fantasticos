@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --amarelo: #FFBB55;
+  --salmao: #EE5544;
+  --preto: #222;
+  --branco: #FAF6ED;
+  --verde: #33FF44;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.title {
+  grid-column: 1 / 3;
+  font: 96px 'Playfair Display SC', georgia;
+  line-height: 96px;
+  margin-bottom: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+  grid-template-areas: 
+  '. . nav nav'
+  '. animais animais .'
+  '. faq faq .'
+  '. numeros numeros .'
+  '. contato contato .'
+  '. . footer footer'
+  ;
+}
+
+.body {
+  background: var(--branco);
+  -webkit-font-smoothing: antialiased;
+}
+
+.menu {
+  grid-area: nav;
+  background: var(--amarelo);
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.menu_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.menu_items li a {
+  display: block;
+  padding: 10px;
+  font: bold 14px 'IBM Plex Mono', monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--preto);
+}
+
+.menu_items > li:last-child a::after {
+  content: '➞';
+  margin-left: 15px;
+}
+
+[data-menu="button"] {
+  display: none;
+}
+
+.animals {
+  grid-area: animais;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.animals_list {
+  grid-column: 2 / 3;
+  height: 370px;
+  overflow-y: auto;
+  cursor: pointer;
+  scrollbar-color: ligth var(--amarelo) !important;
+  scrollbar-width: thin;
+}
+
+.animals_list::-webkit-scrollbar {
+  width: 18px;
+}
+
+.animals_list::-webkit-scrollbar-thumb {
+  background: var(--amarelo);
+  border-left: 4px solid var(--branco);
+  border-right: 4px solid var(--branco);
+}
+
+.animals_description {
+  grid-column: 3 / 4;
+}
+
+.animals_description h2 {
+  margin-bottom: 20px;
+  font: 16px 'IBM Plex Mono', monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--salmao);
+}
+
+.animals_description h2::before {
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 40px;
+  margin-right: 10px;
+  background: var(--amarelo);
+}
+
+.animals_description p {
+  font: 16px Helvetica, 'Times New Roman', serif;
+  color: var(--preto);
+  margin-bottom: 20px;
+}
+
+.js [data-tab="content"] section {
+  display: none;
+  transition: .3s ease-in;
+}
+
+.faq {
+  grid-area: faq;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.faq_list {
+  grid-column: 2 / 4;
+}
+
+.faq_list dt {
+  font: 16px 'IBM Plex Mono', monospace;
+  color: var(--salmao);
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.faq_list dd {
+  display: none;
+  font: 16px Helvetica, 'Times New Roman', serif;
+  margin: 5px 0 0 30px;
+}
+
+.faq_list dt::before {
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 20px;
+  margin-right: 10px;
+  background: var(--amarelo);
+}
+
+.faq_list dt::after {
+  content: '↴';
+  color: var(--salmao);
+  margin-left: 10px;
+}
+
+
+.numbers {
+  grid-area: numeros;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.numbers_layout {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.numbers_layout div {
+  margin-top: 30px;
+}
+
+.numbers_layout h3 {
+  font: bold 32px 'Playfair Display SC', Georgia;
+  color: var(--preto);
+  margin-bottom: 10px;
+}
+
+.numbers_layout span {
+  font: bold 24px 'IBM Plex Mono', monospace;
+  color: var(--salmao);
+}
+
+.contact {
+  grid-area: contato;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.bitcoin {
+  background: #33FF44;
+  padding: 3px 8px;
+  border-radius: 5px; 
+  font: bold 16px 'IBM Plex Mono', monospace;
+}
+
+.map {
+  grid-column: 2 / 3;
+}
+
+.address {
+  grid-column: 3 / 4;
+}
+
+.contact_list li {
+  margin-bottom: 15px;
+  font: 16px Helvetica, 'Times New Roman', serif;
+  color: var(--preto);
+}
+
+.contact_list li::before {
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 20px;
+  margin-right: 10px;
+  background: var(--amarelo);
+}
+
+[data-funcionamento]::after {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  border: 2px solid var(--preto);
+  margin-left: 4px;
+  background: #d40000;
+}
+
+[data-funcionamento].aberto::after {
+  background: #33FF44;
+}
+
+.footer {
+  grid-area: footer;
+  background: var(--amarelo);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.footer p {
+  font: bold 16px 'IBM Plex Mono', monospace;
+}
+
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'nav'
+    'animais'
+    'faq'
+    'numeros'
+    'contato'
+    'footer'
+    ;
+    gap: 10px;
+  }
+  
+  .menu {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .menu_items {
+    display: none;
+  }
+
+  .menu_items > li:last-child a::after {
+    content: '';
+    margin-left: 0;
+  }
+
+  [data-menu="button"] {
+    display: flex;
+    padding: 5px 15px;
+    background: var(--preto);
+    color: var(--branco);
+    font: bold 16px 'IBM Plex Mono', monospace;
+    border-radius: 4px;
+    margin: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    z-index: 300;
+  }
+
+  [data-menu="button"]::before {
+    content: '';
+    display: inline-block;
+    background: var(--branco);
+    height: 2px;
+    width: 12px;
+    box-shadow: 0 4px var(--branco), 0 -4px var(--branco);
+    margin-right: 4px;
+    transition: transform .3s;
+  }
+
+  [data-menu="button"].active_menu_mobile::before {
+    transform: rotate(90deg);
+  }
+
+  [data-menu="list"] {
+    display: none;
+    background: var(--amarelo);
+    position: absolute;
+    z-index: 200;
+    width: 160px;
+    top: 0;
+    padding: 60px 0 20px;
+    box-shadow: 2px 2px 2px 0 #0000004d;
+  }
+
+  [data-menu="list"] li a:hover {
+    color: var(--branco)
+  }
+
+  [data-menu="list"].active_menu_mobile {
+    display: block;
+    animation: show-right .3s forwards;
+  }
+  
+  .animals {
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+  }
+  
+  .animals_list {
+    grid-column: 1;
+  }
+  
+  .animals_description {
+    grid-column: 2;
+  }
+  
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .faq_list {
+    grid-column: 1;
+  }
+  
+  .numbers {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .numbers_layout {
+    grid-column: 1;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .map {
+    grid-column: 1;
+  }
+  
+  address {
+    grid-column: 1;
+    margin-top: 20px;
+  }
+  
+  .footer {
+    margin-bottom: 0;
+  }
+}
+
+.js [data-tab="content"] section.active_description {
+  display: block !important;
+}
+
+.js [data-tab="content"] section.active_description.show-right {
+  animation: show-right .6s forwards;
+}
+
+.js [data-tab="content"] section.active_description.show-down {
+  animation: show-down .6s forwards;
+}
+
+@keyframes show-right {
+  from{
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.js [data-anime="accordion"] dt.active_faq::after {
+  content: '⬏';
+  color: var(--salmao);
+  margin-left: 10px;
+}
+
+.js [data-anime="accordion"] dd.active_faq {
+  display: block;
+  animation: showFaq .5s forwards;
+}
+
+@keyframes showFaq {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.js [data-anime="scroll"] {
+  opacity: 0;
+  transform: translate3d(-50px, 0, 0);
+  transition: .5s;
+}
+.js [data-anime="scroll"].scroll_animado {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
