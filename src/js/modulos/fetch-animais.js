@@ -1,4 +1,4 @@
-import initAnimaNumeros from './anima-numeros.js';
+import initAnimaNumeros from './anima-numeros';
 
 export default function initFetchAnimais() {
   const url = './animaisapi.json';
