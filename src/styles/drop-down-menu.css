@@ -46,4 +46,8 @@
    position: static;
    border: none;
  }
+ [data-dropdown] .dropdown_menu{
+  display: block;
+  animation: showUp .3s forwards;
+}
 }

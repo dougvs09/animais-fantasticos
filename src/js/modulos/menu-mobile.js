@@ -5,11 +5,14 @@ export default function initMenuMobile() {}
 const btnMenu = document.querySelector('[data-menu="button"]');
 const menuItems = document.querySelector('[data-menu="list"]');
 
-function openMenuMobile() {
-  this.classList.toggle('active_menu_mobile');
-  menuItems.classList.toggle('active_menu_mobile');
+function openMenuMobile(event) {
+  event.preventDefault();
+  btnMenu.classList.add('active_menu_mobile');
+  btnMenu.disabled = true;
+  menuItems.classList.add('active_menu_mobile');
   clickOutside(menuItems, ['click', 'touchstart'], () => {
-    this.classList.remove('active_menu_mobile');
+    btnMenu.classList.remove('active_menu_mobile');
+    btnMenu.disabled = false;
     menuItems.classList.remove('active_menu_mobile');
   });
 }
